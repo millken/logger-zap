@@ -66,7 +66,7 @@ func New(config logger.Configuration) (logger.Logger, error) {
 	combinedCore := zapcore.NewTee(cores...)
 
 	logger := zap.New(combinedCore,
-		zap.AddCallerSkip(2),
+		zap.AddCallerSkip(1),
 		zap.AddCaller(),
 	).Sugar()
 
